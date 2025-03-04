@@ -44,7 +44,7 @@ TaskMaster adalah aplikasi web untuk pengelolaan tugas (to-do list) yang dilengk
 4. Konfigurasi koneksi database di file `api/tasks.php`:
    ```php
    $host = 'localhost';
-   $db = 'taskmaster';
+   $db = 'todo';
    $user = 'username';
    $pass = 'password';
    ```
