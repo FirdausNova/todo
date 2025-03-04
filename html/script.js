@@ -9,14 +9,19 @@ const editTaskModal = document.getElementById('editTaskModal');
 const editTaskForm = document.getElementById('editTaskForm');
 const notification = document.getElementById('notification');
 const notificationMessage = document.getElementById('notificationMessage');
+const themeToggle = document.getElementById('themeToggle');
 
 // Event Listeners
-document.addEventListener('DOMContentLoaded', loadTasks);
+document.addEventListener('DOMContentLoaded', () => {
+    loadTasks();
+    loadTheme();
+});
 addTaskForm.addEventListener('submit', addTask);
 editTaskForm.addEventListener('submit', updateTask);
 searchTask.addEventListener('input', filterTasks);
 filterStatus.addEventListener('change', filterTasks);
 filterPriority.addEventListener('change', filterTasks);
+themeToggle.addEventListener('click', toggleTheme);
 
 // Close modal events
 document.querySelector('.close').addEventListener('click', closeModal);
@@ -383,5 +388,40 @@ function getPriorityLabel(priority) {
         case 'medium': return 'Sedang';
         case 'low': return 'Rendah';
         default: return 'Sedang';
+    }
+}
+
+// Theme functions
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    // Tambahkan kelas transisi sebelum mengubah tema
+    document.documentElement.classList.add('theme-transition');
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
+    
+    // Hapus kelas transisi setelah animasi selesai
+    setTimeout(() => {
+        document.documentElement.classList.remove('theme-transition');
+    }, 500);
+    
+    showNotification(`Mode ${newTheme === 'dark' ? 'gelap' : 'terang'} diaktifkan`, 'info');
+}
+
+function updateThemeIcon(theme) {
+    const icon = themeToggle.querySelector('i');
+    if (theme === 'dark') {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
     }
 }
