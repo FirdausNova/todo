@@ -28,7 +28,7 @@ TaskMaster adalah aplikasi web untuk pengelolaan tugas (to-do list) yang dilengk
 
 1. Clone repositori ini ke komputer lokal atau server web Anda:
    ```bash
-   git clone https://github.com/username/taskmaster.git
+   git clone https://github.com/FirdausNova/todo
    ```
 
 2. Buat database MySQL baru:
