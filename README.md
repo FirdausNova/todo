@@ -36,9 +36,9 @@ TaskMaster adalah aplikasi web untuk pengelolaan tugas (to-do list) yang dilengk
    CREATE DATABASE taskmaster CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
    ```
 
-3. Import struktur database dari file `database.sql`:
+3. Import struktur database dari file `todo.sql`:
    ```bash
-   mysql -u username -p taskmaster < database.sql
+   mysql -u username -p taskmaster < todo.sql
    ```
 
 4. Konfigurasi koneksi database di file `api/tasks.php`:
