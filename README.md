@@ -59,9 +59,9 @@ TaskMaster adalah aplikasi web untuk pengelolaan tugas (to-do list) yang dilengk
 todo/
 ├── api/
 │   └── tasks.php       # API CRUD untuk tugas
-├── database
+├── database/
 │   └── todo.sql        # Struktur database
-├── html
+├── html/
 │   └── index.html      # Halaman utama aplikasi
 │   └── style.css       # Stylesheet aplikasi
 │   └── script.js       # JavaScript untuk logika aplikasi
