@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Aplikasi To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TaskMaster <i class="fas fa-check-circle"></i></h1>
+            <p>Kelola tugas-tugas Anda dengan mudah</p>
+        </header>
+        
+        <div class="task-form">
+            <form id="addTaskForm">
+                <div class="input-group">
+                    <input type="text" id="taskTitle" placeholder="Judul tugas..." required>
+                    <textarea id="taskDescription" placeholder="Deskripsi tugas (opsional)"></textarea>
+                    <div class="priority-selector">
+                        <label>Prioritas:</label>
+                        <select id="taskPriority">
+                            <option value="low">Rendah</option>
+                            <option value="medium" selected>Sedang</option>
+                            <option value="high">Tinggi</option>
+                        </select>
+                    </div>
+                    <div class="date-selector">
+                        <label>Tenggat waktu:</label>
+                        <input type="date" id="taskDueDate">
+                    </div>
+                </div>
+                <button type="submit" class="btn-add">
+                    <i class="fas fa-plus"></i> Tambah Tugas
+                </button>
+            </form>
+        </div>
+        
+        <div class="filter-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchTask" placeholder="Cari tugas...">
+            </div>
+            <div class="filter-options">
+                <label>Filter:</label>
+                <select id="filterStatus">
+                    <option value="all" selected>Semua</option>
+                    <option value="active">Aktif</option>
+                    <option value="completed">Selesai</option>
+                </select>
+                <select id="filterPriority">
+                    <option value="all" selected>Semua Prioritas</option>
+                    <option value="low">Rendah</option>
+                    <option value="medium">Sedang</option>
+                    <option value="high">Tinggi</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="tasks-container">
+            <h2>Daftar Tugas <span id="taskCount">(0)</span></h2>
+            <div id="tasksList">
+                <!-- Tasks will be loaded here dynamically -->
+                <div class="empty-state">
+                    <i class="fas fa-clipboard-list"></i>
+                    <p>Belum ada tugas. Tambahkan tugas baru untuk memulai!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Task Edit Modal -->
+    <div id="editTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Tugas</h2>
+            <form id="editTaskForm">
+                <input type="hidden" id="editTaskId">
+                <div class="input-group">
+                    <label for="editTaskTitle">Judul:</label>
+                    <input type="text" id="editTaskTitle" required>
+                    
+                    <label for="editTaskDescription">Deskripsi:</label>
+                    <textarea id="editTaskDescription"></textarea>
+                    
+                    <label for="editTaskPriority">Prioritas:</label>
+                    <select id="editTaskPriority">
+                        <option value="low">Rendah</option>
+                        <option value="medium">Sedang</option>
+                        <option value="high">Tinggi</option>
+                    </select>
+                    
+                    <label for="editTaskDueDate">Tenggat Waktu:</label>
+                    <input type="date" id="editTaskDueDate">
+                </div>
+                <div class="modal-buttons">
+                    <button type="button" id="cancelEdit" class="btn-cancel">Batal</button>
+                    <button type="submit" class="btn-save">Simpan Perubahan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <p id="notificationMessage"></p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
