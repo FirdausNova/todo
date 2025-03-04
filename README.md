@@ -56,13 +56,15 @@ TaskMaster adalah aplikasi web untuk pengelolaan tugas (to-do list) yang dilengk
 ## 📂 Struktur Folder
 
 ```
-taskmaster/
+todo/
 ├── api/
 │   └── tasks.php       # API CRUD untuk tugas
-├── index.html          # Halaman utama aplikasi
-├── style.css           # Stylesheet aplikasi
-├── script.js           # JavaScript untuk logika aplikasi
-├── database.sql        # Struktur database
+├── database
+│   └── todo.sql        # Struktur database
+├── html
+│   └── index.html      # Halaman utama aplikasi
+│   └── style.css       # Stylesheet aplikasi
+│   └── script.js       # JavaScript untuk logika aplikasi
 └── README.md           # Dokumentasi proyek
 ```
 
