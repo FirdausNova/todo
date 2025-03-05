@@ -9,6 +9,9 @@ TaskMaster adalah aplikasi web untuk pengelolaan tugas (to-do list) yang dilengk
 - 📅 Pengelolaan tenggat waktu
 - 🔍 Pencarian dan filter tugas berdasarkan status dan prioritas
 - 📱 Antarmuka responsif untuk akses di berbagai perangkat
+- 🌙 Tema gelap (dark mode) untuk kenyamanan pengguna
+- 📋 Kategori/label untuk pengorganisasian tugas
+- 🔔 Notifikasi pengingat tenggat waktu
 
 ## 🛠️ Teknologi yang Digunakan
 
@@ -217,12 +220,12 @@ Aplikasi ini didesain untuk tampil dengan baik di berbagai perangkat:
 Beberapa fitur yang dapat ditambahkan untuk pengembangan selanjutnya:
 
 - Sistem autentikasi pengguna (login/register)
-- Kategori/label untuk tugas
-- Notifikasi pengingat tenggat waktu
 - Ekspor data tugas (PDF, CSV)
-- Tema gelap (dark mode)
 - Sinkronisasi tugas dengan layanan kalender
 - Fitur subtask (tugas bersarang)
+- Statistik dan laporan kemajuan tugas
+- Kolaborasi tim untuk tugas bersama
+- Integrasi dengan aplikasi produktivitas lainnya
 
 ## 📄 Lisensi
 
